@@ -1,0 +1,32 @@
+package com.springmvc.first.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping("/home")
+public class FirstSpringMVCController {
+@RequestMapping("/hello")
+public String sayHello()
+{
+	return "hello";
+}
+@RequestMapping("/message")
+public String sendmessage(Model m)
+{
+m.addAttribute("myMessage", "Hello from SpringMVC");
+m.addAttribute("myMessages", "hi");
+return "hai";
+}
+@RequestMapping("/supermessage")
+public ModelAndView sendsupermessage(ModelAndView  mv)
+{
+	mv.addAllObjects("food", "hello");
+	mv.setViewName("canteen");
+	
+	return mv;
+	
+}
+}

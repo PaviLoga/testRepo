@@ -1,0 +1,5 @@
+package com.springmvc.first;
+
+public class FirstSpringMVCController {
+
+}
